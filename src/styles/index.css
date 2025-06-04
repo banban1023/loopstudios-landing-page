@@ -1,0 +1,34 @@
+.landing header {
+  background: url('../assets/images/mobile/image-hero.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  padding: 40px 24px;
+}
+.landing header .landing_nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.landing header .landing_nav .landing_logo a {
+  display: block;
+  width: 145px;
+  height: 25px;
+  background: url('../assets/images/logo.svg') no-repeat center center;
+  background-size: contain;
+}
+.landing header .landing_nav .landing_show_nav {
+  width: 24px;
+  height: 16px;
+  background: url('../assets/images/icon-hamburger.svg') no-repeat center center;
+  border: none;
+  font-size: 0;
+}
+.landing header .landing_nav .landing_mobile_nav {
+  display: none;
+}
+.landing header .landing_nav .landing_desktop_nav {
+  display: none;
+}
+.landing header h2 {
+  font-weight: 200;
+}

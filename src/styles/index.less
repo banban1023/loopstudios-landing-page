@@ -1,0 +1,178 @@
+.landing {
+  header {
+    background: url('../assets/images/mobile/image-hero.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    padding: 40px 24px;
+    .landing_nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .landing_logo {
+        a {
+          display: block;
+          width: 145px;
+          height: 25px;
+          background: url('../assets/images/logo.svg') no-repeat center center;
+          background-size: contain;
+        }
+      }
+      .landing_show_nav {
+        width: 24px;
+        height: 16px;
+        background: url('../assets/images/icon-hamburger.svg') no-repeat center center;
+        border: none;
+        font-size: 0;
+      }
+      nav {
+        .landing_mobile_nav {
+        }
+        .landing_desktop_nav {
+          display: none;
+        }
+      }
+    }
+    h2 {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 2px solid @white;
+      padding: 24px;
+      font-weight: 200;
+      color: @white;
+      font-size: 40px;
+    }
+  }
+  main {
+    .landing_intro {
+      height: 100vh;
+      padding: 97px 24px 0;
+      .landing_intro_img {
+        width: 100%;
+      }
+      .landing_intro_title {
+        font-weight: 300;
+        font-size: 32px;
+        margin-top: 44px;
+        text-align: center;
+      }
+      .landing_intro_msg {
+        font-family: 'Alata-Regular';
+        text-align: center;
+        color: rgb(126, 126, 126);
+        padding: 18px 22px;
+        font-size: 15px;
+      }
+    }
+    .landing_creations {
+      padding: 30px 24px;
+      .landing_creations_title {
+        font-weight: 300;
+        font-size: 32px;
+        text-align: center;
+      }
+      .landing_creations_card {
+        margin-top: 48px;
+        li {
+          width: 100%;
+          margin-bottom: 25px;
+          position: relative;
+          .landing_creations_img {
+            position: relative;
+            height: 120px;
+            overflow: hidden;
+            &::after {
+              content: '';
+              position: absolute;
+              width: 50%;
+              height: 100%;
+              top: 0;
+              left: 0;
+              background: linear-gradient(
+                to right,
+                #000,
+                transparent
+              );
+              opacity: 0.6;
+            }
+            img {
+              width: 100%;
+            }
+          }
+          .landing_creations_card_des {
+            position: absolute;
+            color: @white;
+            top: 53px;
+            left: 21px;
+            font-size: 25px;
+            font-weight: 200;
+          }
+        }
+      }
+      .landing_creations_all {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 7px;
+        background-color: transparent;
+        width: 160px;
+        height: 43px;
+        border: 2px solid #000;
+        font-family: 'Alata-Regular';
+        letter-spacing: 0.3em;
+        font-weight: 700;
+      }
+    }
+  }
+  footer {
+    margin-top: 66px;
+    height: 471px;
+    background-color: @black;
+    color: @white;
+    padding-top: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .landing_company_left {
+      .landing_company_logo {
+        width: 145px;
+        height: 25px;
+        background: url('../assets/images/logo.svg') no-repeat center center;
+        background-size: contain;
+      }
+      .landing_company {
+        margin-top: 27px;
+        .landing_company_item {
+          text-align: center;
+          font-weight: 300;
+          padding: 13px 0;
+          font-size: 15px;
+        }
+      }
+    }
+    .landing_share_right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      ul {
+        display: flex;
+        width: 145px;
+        justify-content: space-between;
+        margin-top: 35px;
+        li {
+          a {
+            img {}
+          }
+        }
+      }
+      .landing_copyright {
+        margin-top: 20px;
+        color: @grey-200;
+        opacity: 0.5;
+        font-weight: 200;
+        font-family: 'Alata-Regular';
+        font-size: 15px;
+      }
+    }
+  }
+}
