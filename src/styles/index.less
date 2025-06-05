@@ -78,7 +78,7 @@
         font-size: 32px;
         text-align: center;
       }
-      .landing_creations_card {
+      .landing_creations_card_mobile {
         margin-top: 48px;
         li {
           width: 100%;
@@ -91,7 +91,7 @@
             &::after {
               content: '';
               position: absolute;
-              width: 50%;
+              width: 100%;
               height: 100%;
               top: 0;
               left: 0;
@@ -116,6 +116,9 @@
           }
         }
       }
+      .landing_creations_card_desktop {
+        display: none;
+      }
       .landing_creations_all {
         position: relative;
         left: 50%;
@@ -128,6 +131,24 @@
         font-family: 'Alata-Regular';
         letter-spacing: 0.3em;
         font-weight: 700;
+        &::after {
+          content: '';
+          position: absolute;
+          border: 2px solid #000;
+          width: 158px;
+          height: 41px;
+          top: -3px;
+          left: -3px;
+          opacity: 0;
+          transform: scale(1.4);
+          transition: all 0.3s;
+        }
+        &:hover {
+          &::after {
+            opacity: 0.5;
+            transform: scale(1);
+          }
+        }
       }
     }
   }
@@ -179,6 +200,238 @@
         font-weight: 200;
         font-family: 'Alata-Regular';
         font-size: 15px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .landing {
+    header {
+      padding: 85px 218px;
+      height: 859px;
+      width: 100%;
+      background: url('/src/assets/images/desktop/image-hero.jpg') no-repeat;
+      background-size: cover;
+      .landing_nav {
+        .landing_logo {
+          a {
+            width: 256px;
+            height: 45px;
+          }
+        }
+        nav {
+          .landing_desktop_nav {
+            display: flex;
+            width: 505px;
+            justify-content: space-between;
+            li {
+              position: relative;
+              cursor: pointer;
+              height: 34px;
+              font-size: 20px;
+              &:hover {
+                &::after {
+                  content: '';
+                  position: absolute;
+                  bottom: 0;
+                  width: 25px;
+                  height: 2px;
+                  background-color: #fff;
+                  left: 50%;
+                  transform: translateX(-50%);
+                }
+              }
+              a {
+                color: @white;
+              }
+            }
+          }
+        }
+        .landing_show_nav {
+          display: none;
+        }
+      }
+      h2 {
+        max-width: 860px;
+        max-height: 370px;
+        font-size: 95px;
+      }
+    }
+    main {
+      .landing_intro {
+        height: 874px;
+        position: relative;
+        padding: 162px 0;
+        .center {
+          width: 1118px;
+          height: 500px;
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        .landing_intro_img {
+          max-width: 732px;
+          position: absolute;
+        }
+        .landing_intro_card {
+          position: absolute;
+          max-width: 725px;
+          max-height: 660px;
+          height: 318px;
+          z-index: 10;
+          left: 570px;
+          top: 184px;
+          background-color: @white;
+          padding: 100px 0 0 100px;
+          .landing_intro_title {
+            font-size: 50px;
+            text-align: left;
+            margin-top: 0;
+          }
+          .landing_intro_msg {
+            padding: 0;
+            text-align: left;
+            margin-top: 27px;
+          }
+        }
+      }
+      .landing_creations {
+        position: relative;
+        padding: 0;
+        width: 1115px;
+        margin: 0 auto;
+        .landing_creations_title {
+          font-size: 62px;
+          text-align-last: left;
+          padding-bottom: 74px;
+        }
+        .landing_creations_card_mobile {
+          display: none;
+        }
+        .landing_creations_card_desktop {
+          display: grid;
+          grid-template-rows: repeat(2, 1fr);
+          grid-template-columns: repeat(4, 1fr);
+          width: 1115px;
+          gap: 30px;
+          }
+          li {
+            position: relative;
+            width: 256px;
+            height: 450px;
+            cursor: pointer;
+            &:hover {
+              .landing_creations_img {
+                opacity: 0.3;
+              }
+              .landing_creations_card_des {
+                color: #000;
+              }
+              }
+            .landing_creations_card_des {
+              top: 355px;
+              left: 42px;
+              position: absolute;
+              color: @white;
+              font-size: 30px;
+              font-weight: 300;
+              transition: all 0.3s;
+            }
+            .landing_creations_img {
+              transition: all 0.3s;
+              &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                  to top,
+                  #000,
+                  transparent
+                );
+                opacity: 0.6;
+            }
+          }
+        }
+        .landing_creations_all {
+          position: absolute;
+          top: 0;
+          left: 1035px;
+          cursor: pointer;
+          transition: all 0.2s;
+          &:hover {
+            background-color: #000;
+            color: #fff;
+          }
+        }
+      }
+    }
+    footer {
+      height: 162px;
+      width: 100%;
+      margin-top: 185px;
+      padding-top: 28px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      .container {
+        width: 1115px;
+        display: flex;
+        justify-content: space-between;
+        .landing_company_left {
+          .landing_company {
+            width: 380px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-weight: 400;
+            margin-top: 18px;
+            li {
+              &:hover {
+                cursor: pointer;
+                position: relative;
+                &::after {
+                  width: 50%;
+                  height: 2px;
+                  background-color: #fff;
+                  content: '';
+                  bottom: 0;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  position: absolute;
+                }
+              }
+            }
+          }
+        }
+        .landing_share_right {
+          align-items: end;
+          ul {
+            margin-top: 0;
+            li {
+              padding-bottom: 11px;
+              position: relative;
+              &:hover {
+                cursor: pointer;
+                &::after {
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  bottom: 0;
+                  left: 0;
+                  height: 2px;
+                  background-color: #fff;
+                }
+              }
+            }
+          }
+          .landing_copyright {
+            margin-top: 10px;
+          }
+        }
       }
     }
   }
