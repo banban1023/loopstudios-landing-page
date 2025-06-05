@@ -1,10 +1,9 @@
 <template>
   <transition name="fade">
-    <div class="popup_mask" v-if="visible" @click.self="handleClose">
-      <div class="popup_content">
-        <slot></slot>
-        <button class="popup_close" @click="handleClose">×</button>
-      </div>
+    <div class="popup_content" v-if="visible">
+      <p>logo</p>
+      <slot></slot>
+      <button class="popup_close" @click="handleClose">×</button>
     </div>
   </transition>
 </template>
@@ -36,36 +35,37 @@ export default {
 }
 </script>
 
-<style scoped>
-.popup-mask {
-  position: fixed;
+<style lang="less" scoped>
+.popup_content {
+  background-color: #000;
+  padding: 40px 25px 0;
+  left: 0;
   top: 0;
-  left: 0;
-  width: 100vw;
+  position: fixed;
+  width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.popup-content {
-  background: hsl(36, 100%, 99%);
-  padding: 75px 25px 0;
-  left: 0;
-  position: absolute;
-  min-width: 258px;
-  height: 100%;
   line-height: 50px;
   font-size: 18px;
+  z-index: 100;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 300;
+  p {
+    width: 145px;
+    height: 25px;
+    font-size: 0;
+    background: url('../assets/images/logo.svg') no-repeat center center;
+    background-size: contain;
+    margin-bottom: 140px;
+  }
 }
 
-.popup-close {
+.popup_close {
   position: absolute;
-  top:25px;
-  width: 14px;
-  height: 15px;
+  top: 44px;
+  left: 331px;
+  width: 20px;
+  height: 20px;
   background: none;
   border: none;
   font-size: 0;

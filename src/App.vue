@@ -4,7 +4,14 @@
       <div class="landing_nav">
         <h1 class="landing_logo"><a href="#"></a></h1>
         <nav>
-          <Popup v-show="showPopup" class="landing_mobile_nav"></Popup>
+          <Popup v-model="showPopup" class="landing_mobile_nav">
+            <ul>
+              <li
+              v-for="(item, index) in companyList"
+              :key="index"
+              ><a href="#">{{item}}</a></li>
+            </ul>
+          </Popup>
           <ul class="landing_desktop_nav">
             <li></li>
           </ul>
